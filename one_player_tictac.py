@@ -11,7 +11,7 @@ def cls():
 #line = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 def Display_board(board):
-    '''Displayes the empty board before input and displayes values on board  after input by users''
+    # Displayes the empty board before input and displayes values on board  after input by users
     cls()
     print("\t\t\t    |   | ")
     print("\t\t\t ",board[1],"|",board[2], "|",board[3],"")
@@ -36,7 +36,7 @@ def input_player():
     
 
 def position_board(position,board,player):
-    '''places  input value to a position in list .here name of list is board'''
+    # places  input value to a position in list .here name of list is board
     board[position] = player
 
 def winner_check(board,player):
@@ -52,7 +52,7 @@ def winner_check(board,player):
 
 
 def go_first():
-    '''uses a random function to choose which player goes first'''
+    # uses a random function to choose which player goes first
     import random
     if random.randint(1, 2) == 1:
         return "X"
@@ -60,14 +60,14 @@ def go_first():
         return "O"
 
 def position_Check(board,position):
-    '''Boolean function:checks whether the position is availiable or not'''
+    # Boolean function:checks whether the position is availiable or not
     if board[position] == " ":
         return True
     else:
         return False
 
 def board_Full(board,position_Check):
-    '''Boolean function:checks if the board is full'''
+    # Boolean function:checks if the board is full
     for num in range(1,10):
         if position_Check(board,num):
             return False
@@ -75,7 +75,7 @@ def board_Full(board,position_Check):
         return True
 
 def player_Input(board,player):
-    '''inputs position from users and validates whether the position is empty or not using position_check function'''
+    # inputs position from users and validates whether the position is empty or not using position_check function
     choice = " "
     while((choice not in "1 2 3 4 5 6 7 8 9".split() or not  position_Check(board,int(choice)))):
         choice = input("{a}  what position do you want to choose from 1-9?".format(a=player))
@@ -204,7 +204,7 @@ def test_fork_move(board, player, i):
 
 
 def replay():
-    '''boolean function:asks users for replay.for Y.... input returns True otherwise returns false'''
+    # boolean function:asks users for replay.for Y.... input returns True otherwise returns false
     decision = input("Do you want to play again????").lower()
     if decision[0] == 'y':
         return True
@@ -213,7 +213,7 @@ def replay():
 
 Playing = True
 while Playing:
-    '''main function for game.runs untill a the loop is exited using break'''
+    # main function for game.runs untill a the loop is exited using break
     os.system('clear') # for Linux
     os.system('cls') # for windows
     print('        \t                   Welcome To                           ')
